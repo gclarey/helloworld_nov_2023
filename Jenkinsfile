@@ -16,9 +16,9 @@ pipeline {
         }
         stage ("SonarQube scan") {
           steps{
-            withSonarQubeEnv('sonarQube') {
-          sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gclarey_geolocation'    
-            }
+          withSonarQubeEnv('sonarQube') {
+        sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gclarey_geolocation'    
+                }
           }
         }
         stage('Code Build') {
